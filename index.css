@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada:700');
+
+body {
+  background-repeat: no repeat;
+  background-size: 100%;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+/* allows overlapping for forecast*/
+/*to display and hide forecast*/
+.hide {
+	display: none;
+}
+
+/*to close forecast*/
+#close {
+	background-color: #6bbaa7;
+	color: #FFF7C0;
+	opacity: 1;
+}
+
+
+/*main header styling*/
+h1 {
+	font-size: 5em;
+	font-family: 'Montserrat Subrayada', sans-serif;
+  text-shadow: 2px 2px 2px #fff;
+}
+
+/*styling when mouse hovers home button*/
+#home:hover {
+	color: #fff;
+}
+
+.fa {
+  color: #bb8ef2;
+  margin: 0 auto;
+}
+
+/*styling for buttons*/
+.btn {
+	background-color: #bb8ef2;
+	color: #fff7c0;
+	font-size: 2em;
+	margin: 2px;
+  box-shadow: 2px 2px 2px #fff;
+  cursor: pointer;
+}
+
+/*styling when mouse hovers buttons*/
+.btn:hover {
+	background-color: #fff7c0;
+	color: #6bbaa7;
+}
+
+/*styling for current forecast*/
+#forecast {
+	position: absolute;
+	z-index: -1;
+	font-size: 3vw;
+	font-family: 'Century Gothic', sans-serif;
+  color: #fff;
+  background-color: #1a1a1d;
+  opacity: 0.5;
+  height: 200px;
+  border-radius: 12px;
+  margin-top: 10px;
+  padding: 20px;
+}
+
+#look-ahead {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/*styling for future forecast*/
+.future {
+	background-color: #000;
+	opacity: 0.9;
+  width: 50%;
+  height: 150px;
+	color: #fff;
+	font-size: 2em;
+  border-radius: 12px;
+  margin: 2px;
+	font-family: 'Century Gothic', sans-serif;
+}
+
+/*styling for dark sky link*/
+#darkSky {
+	margin-top: 5px;
+  height: 100px;
+	max-width: 200px;
+}
+
+#close {
+  height: 50px !important;
+  cursor: pointer;
+  color: #bb8ef2;
+  background-color: #fff;
+}
