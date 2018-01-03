@@ -1,6 +1,10 @@
 $(document).ready(function() {
+
+
+background = (image) => $('body').css('background-image', 'url("' + image + '")');
+
+
 //AJAX request
-	/*shows weather as soon as page loads*/
 	$.getJSON('https://ipinfo.io/json', function(response) {
 
 			var loc = response.loc.split(',');
@@ -10,59 +14,88 @@ $(document).ready(function() {
 		};
 		$.getJSON('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/17142f4f221651ca2e9f8af2c0fc8929/' + coords.latitude + ',' + coords.longitude, function(weather) {
 
-      console.log(weather.minutely.summary);
-/*shows weather icons as soon as page loads*/
-			function icons() {
   if (weather.currently.icon == "partly-cloudy-night") {
-    $('#forecast').html('</br><img                 src="https://dl.dropbox.com/s/qxfx1eroy12fzjc/Cloud-Moon.svg?dl=0" 				alt="cloudy-night">');
+    background('cloudy-night.jpg');
+		$('h1').addClass('cloudy-night-h1');
+		$('.btn').addClass('cloudy-night-buttons');
+		$('#close').addClass('cloudy-night-close');
+		$('.fa').addClass('cloudy-night-home');
 	}
 
   if (weather.currently.icon === 'clear-night') {
-    $('body').css('background-image', 'url("clear-night.jpg")');
-    $('h1').css('color', '#bb8ef2');
-    $('.btn').css('background-color', '#bb8ef2').css('color', '#fff').css('box-shadow', '2px 2px 2px #fff');
-      $('.btn').hover(function() {
-        $(this).css('background-color', '#fff').css('color', '#bb8ef2');
-      }, function() {
-        $(this).css('background-color', '#bb8ef2').css('color', '#fff');
-      });
+    background('clear-night.jpg');
+    $('h1').addClass('clear-night-h1');
+    $('.btn').addClass('clear-night-buttons');
+		$('.future').addClass('clear-night-future');
+		$('#close').addClass('clear-night-close');
+		$('.fa').addClass('clear-night-home');
   }
 
   if (weather.currently.icon === 'clear-day') {
-    $('#forecast').html('</br><img src="https://dl.dropbox.com/s/lbygou8vsfofmd8/Sun.svg?dl=0" alt="clear-day">');
+    background('clear-sky.jpg');
+		$('.btn').addClass('clear-day-buttons');
+		$('.future').addClass('clear-day-future');
+		$('#close').addClass('clear-day-close');
+		$('.fa').addClass('clear-day-home');
   }
 
     if (weather.currently.icon === 'rain') {
-    $('#forecast').html('</br><img src="https://dl.dropbox.com/s/dbjis15dimuwt4u/Cloud-Drizzle.svg?dl=0" alt="rain">');
+    background('rain.jpg');
+		$('#forecast').addClass('rain-forecast');
+		$('.btn').addClass('rain-buttons');
+		$('#close').addClass('rain-buttons-close');
+		$('.future').addClass('rain-future');
+		$('.fa').addClass('rain-home');
   }
 
     if (weather.currently.icon === 'snow') {
-    $('#forecast').html('</br><img src="https://dl.dropbox.com/s/9ude4mnp0361x78/Cloud-Snow-Alt.svg?dl=0" alt="snow">');
+    background('snow.jpg');
+		$('.btn').addClass('snow-buttons');
+		$('#forecast').addClass('snow-forecast');
+		$('.future').addClass('snow-future');
+		$('#close').addClass('snow-close');
+		$('.fa').addClass('snow-home');
   }
 
     if (weather.currently.icon === 'sleet') {
-    $('#forecast').html('</br><img src="https://www.dropbox.com/s/ppk494opmun7kfc/Cloud-Snow.svg?dl=0" alt="sleet">');
+    background('sleet.jpg');
+		$('.btn').addClass('sleet-buttons');
+		$('#forecast').addClass('sleet-forecast');
+		$('.future').addClass('sleet-future');
+		$('#close').addClass('sleet-close');
+		$('.fa').addClass('sleet-home');
   }
 
     if (weather.currently.icon === 'wind') {
-    $('#forecast').html('</br><img src="https://dl.dropbox.com/s/chpsyrnxodd21ib/Cloud-Wind-Sun.svg?dl=0" alt="windy">');
+    background('windy.jpg');
+		$('.btn').addClass('windy-buttons');
+		$('#forecast').addClass('windy-forecast');
+		$('.future').addClass('windy-future');
+		$('#close').addClass('windy-close');
+		$('.fa').addClass('windy-home');
   }
 
     if (weather.currently.icon === 'fog') {
-    $('#forecast').html('</br><img src="https://dl.dropbox.com/s/q3db32y5qs8mcj0/Cloud-Fog.svg?dl=0" alt="fog">');
+    background('fog.jpg');
+		$('.btn').addClass('fog-buttons');
+		$('#forecast').addClass('fog-forecast');
+		$('.future').addClass('fog-future');
+		$('.fa').addClass('fog-home');
+		$('#close').addClass('fog-close');
   }
 
     if (weather.currently.icon === 'partly-cloudy-day') {
-    $('#forecast').html('</br><img src="https://dl.dropbox.com/s/4841jlihxw5j9ev/Cloud-Sun.svg?dl=0" alt="partly-cloudy-day">');
+    background('cloudy-day.jpg');
+		$('.btn').addClass('cloudy-day-buttons');
+		$('#forecast').addClass('cloudy-day-forecast');
+		$('.future').addClass('cloudy-day-future');
+		$('#close').addClass('cloudy-day-close');
+		$('.fa').addClass('cloudy-day-home');
   }
 
-    if (weather.currently.icon === 'partly-cloudy-night') {
-    $('#forecast').html('</br><img src="https://dl.dropbox.com/s/qxfx1eroy12fzjc/Cloud-Moon.svg?dl=0" alt="partly-cloudy-night">');
-  }
-}
-			icons();
+
 	/* shows current forecast as soon as page loads*/
-			$('#forecast').prepend(Math.floor(weather.currently.temperature) + "&deg;F</>" + "</br>" + weather.minutely.summary);
+$('#forecast').prepend(Math.floor(weather.currently.temperature) + "&deg;F</>" + "</br>" + weather.minutely.summary);
 
 
 		})
@@ -79,58 +112,16 @@ $("#f").click(function(event) {
 		};
 		$.getJSON('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/17142f4f221651ca2e9f8af2c0fc8929/' + coords.latitude + ',' + coords.longitude, function(weather) {
 
-			function icons() {
-  if (weather.currently.icon == "partly-cloudy-night") {
-    $('#forecast').html('</br><img                 src="https://dl.dropbox.com/s/qxfx1eroy12fzjc/Cloud-Moon.svg?dl=0" 				alt="cloudy-night">');
-	}
-
-  if (weather.currently.icon === 'clear-night') {
-    $('#forecast').html('</br><img src="https://dl.dropbox.com/s/rs8u9up6335jrwp/Moon.svg?dl=0" alt="clear-night">');
-  }
-
-  if (weather.currently.icon === 'clear-day') {
-    $('#forecast').html('</br><img src="https://dl.dropbox.com/s/lbygou8vsfofmd8/Sun.svg?dl=0" alt="clear-day">');
-  }
-
-    if (weather.currently.icon === 'rain') {
-    $('#forecast').html('</br><img src="https://dl.dropbox.com/s/dbjis15dimuwt4u/Cloud-Drizzle.svg?dl=0" alt="rain">');
-  }
-
-    if (weather.currently.icon === 'snow') {
-    $('#forecast').html('</br><img src="https://dl.dropbox.com/s/9ude4mnp0361x78/Cloud-Snow-Alt.svg?dl=0" alt="snow">');
-  }
-
-    if (weather.currently.icon === 'sleet') {
-    $('#forecast').html('</br><img src="https://www.dropbox.com/s/ppk494opmun7kfc/Cloud-Snow.svg?dl=0" alt="sleet">');
-  }
-
-    if (weather.currently.icon === 'wind') {
-    $('#forecast').html('</br><img src="https://dl.dropbox.com/s/chpsyrnxodd21ib/Cloud-Wind-Sun.svg?dl=0" alt="windy">');
-  }
-
-    if (weather.currently.icon === 'fog') {
-    $('#forecast').html('</br><img src="https://dl.dropbox.com/s/q3db32y5qs8mcj0/Cloud-Fog.svg?dl=0" alt="fog">');
-  }
-
-    if (weather.currently.icon === 'partly-cloudy-day') {
-    $('#forecast').html('</br><img src="https://dl.dropbox.com/s/4841jlihxw5j9ev/Cloud-Sun.svg?dl=0" alt="partly-cloudy-day">');
-  }
-
-    if (weather.currently.icon === 'partly-cloudy-night') {
-    $('#forecast').html('</br><img src="https://dl.dropbox.com/s/qxfx1eroy12fzjc/Cloud-Moon.svg?dl=0" alt="partly-cloudy-night">');
-  }
-}
-			icons();
-
-			$('#forecast').prepend(Math.floor(weather.currently.temperature) + "&deg;F</>" + "</br>" + weather.minutely.summary);
-
-
+		$('#forecast').html(Math.floor(weather.currently.temperature) + "&deg;F</>" + "</br>" + weather.minutely.summary);
 		})
 	})
 });
+
 /*click event for future forecast button*/
 $("#future-forecast").click(function(event) {
 		$('.future').removeClass('hide');
+		$('#forecast').addClass('hide');
+		$('.btn').addClass('hide');
 
 		$.getJSON('https://ipinfo.io/json', function(response) {
 
@@ -177,6 +168,7 @@ $("#future-forecast").click(function(event) {
     });
 		});
 	});
+
 /*click event for celsius button*/
 $("#c").click(function(event) {
 	$.getJSON('https://ipinfo.io/json', function(response) {
@@ -188,57 +180,17 @@ $("#c").click(function(event) {
 		};
 		$.getJSON('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/17142f4f221651ca2e9f8af2c0fc8929/' + coords.latitude + ',' + coords.longitude, function(weather) {
 
-	function icons() {
-  if (weather.currently.icon == "partly-cloudy-night") {
-    $('#forecast').html('</br><img                 src="https://dl.dropbox.com/s/qxfx1eroy12fzjc/Cloud-Moon.svg?dl=0" 				alt="cloudy-night">');
-	}
-
-  if (weather.currently.icon === 'clear-night') {
-    $('#forecast').html('</br><img src="https://dl.dropbox.com/s/rs8u9up6335jrwp/Moon.svg?dl=0" alt="clear-night">');
-  }
-
-  if (weather.currently.icon === 'clear-day') {
-    $('#forecast').html('</br><img src="https://dl.dropbox.com/s/lbygou8vsfofmd8/Sun.svg?dl=0" alt="clear-day">');
-  }
-
-    if (weather.currently.icon === 'rain') {
-    $('#forecast').html('</br><img src="https://dl.dropbox.com/s/dbjis15dimuwt4u/Cloud-Drizzle.svg?dl=0" alt="rain">');
-  }
-
-    if (weather.currently.icon === 'snow') {
-    $('#forecast').html('</br><img src="https://dl.dropbox.com/s/9ude4mnp0361x78/Cloud-Snow-Alt.svg?dl=0" alt="snow">');
-  }
-
-    if (weather.currently.icon === 'sleet') {
-    $('#forecast').html('</br><img src="https://www.dropbox.com/s/ppk494opmun7kfc/Cloud-Snow.svg?dl=0" alt="sleet">');
-  }
-
-    if (weather.currently.icon === 'wind') {
-    $('#forecast').html('</br><img src="https://dl.dropbox.com/s/chpsyrnxodd21ib/Cloud-Wind-Sun.svg?dl=0" alt="windy">');
-  }
-
-    if (weather.currently.icon === 'fog') {
-    $('#forecast').html('</br><img src="https://dl.dropbox.com/s/q3db32y5qs8mcj0/Cloud-Fog.svg?dl=0" alt="fog">');
-  }
-
-    if (weather.currently.icon === 'partly-cloudy-day') {
-    $('#forecast').html('</br><img src="https://dl.dropbox.com/s/4841jlihxw5j9ev/Cloud-Sun.svg?dl=0" alt="partly-cloudy-day">');
-  }
-
-    if (weather.currently.icon === 'partly-cloudy-night') {
-    $('#forecast').html('</br><img src="https://dl.dropbox.com/s/qxfx1eroy12fzjc/Cloud-Moon.svg?dl=0" alt="partly-cloudy-night">');
-  }
-}
-	icons();
-
-	$('#forecast').prepend(Math.floor((weather.currently.temperature - 32) * 5/9) + "&deg;C</></br>" + weather.minutely.summary);
-
+	$('#forecast').html(Math.floor((weather.currently.temperature - 32) * 5/9) + "&deg;C</></br>" + weather.minutely.summary);
 		});
 	});
 	});
+
 /*closes future forecast*/
 $('#close').click(function() {
 	$('.future').addClass('hide');
-	console.log('poop');
+	$('#forecast').removeClass('hide');
+	$('.btn').removeClass('hide');
 })
+
+
 });

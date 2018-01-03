@@ -18,8 +18,6 @@ body {
 
 /*to close forecast*/
 #close {
-	background-color: #6bbaa7;
-	color: #FFF7C0;
 	opacity: 1;
 }
 
@@ -31,23 +29,14 @@ h1 {
   text-shadow: 2px 2px 2px #fff;
 }
 
-/*styling when mouse hovers home button*/
-#home:hover {
-	color: #fff;
-}
-
 .fa {
-  color: #bb8ef2;
   margin: 0 auto;
 }
 
 /*styling for buttons*/
 .btn {
-	background-color: #bb8ef2;
-	color: #fff7c0;
 	font-size: 2em;
 	margin: 2px;
-  box-shadow: 2px 2px 2px #fff;
   cursor: pointer;
 }
 
@@ -65,7 +54,6 @@ h1 {
 	font-family: 'Century Gothic', sans-serif;
   color: #fff;
   background-color: #1a1a1d;
-  opacity: 0.5;
   height: 200px;
   border-radius: 12px;
   margin-top: 10px;
@@ -81,27 +69,323 @@ h1 {
 
 /*styling for future forecast*/
 .future {
-	background-color: #000;
 	opacity: 0.9;
   width: 50%;
-  height: 150px;
-	color: #fff;
-	font-size: 2em;
+  height: 80px;
+	font-size: 1em;
   border-radius: 12px;
   margin: 2px;
-	font-family: 'Century Gothic', sans-serif;
+	font-family: 'Helvetica', sans-serif;
 }
 
 /*styling for dark sky link*/
 #darkSky {
 	margin-top: 5px;
-  height: 100px;
-	max-width: 200px;
+  height: 50px;
+	max-width: 100px;
 }
 
 #close {
-  height: 50px !important;
+  height: 30px !important;
   cursor: pointer;
+}
+
+/*change colors of buttons when clear-day*/
+.clear-day-buttons {
+  background-color: #fff7c0;
+  color: #0befd8;
+  box-shadow: 2px 2px 2px #1a1a1d;
+}
+/*change color of buttons when hovered & on clear-day*/
+.clear-day-buttons:hover {
+  background-color: #0befd8;
+  color: #FFF7C0;
+}
+/*change future styling when clear-day*/
+.clear-day-future {
+  background-color: #0befd8;
+  color: #fff7c0;
+}
+/*change future close button on clear-day*/
+.clear-day-close {
+  background-color: #fff7c0 !important;
+  color: #0befd8 !important;
+}
+/*change home styling on clear-day*/
+.clear-day-home {
+  color: #fff7c0;
+}
+/*change home button styling when hovered on clear-day*/
+.clear-day-home:hover {
+  color: #0befd8 !important;
+}
+/*change h1 styling on clear-night*/
+.clear-night-h1 {
   color: #bb8ef2;
+}
+/*change button styling on clear-night*/
+.clear-night-buttons {
+  background-color: #bb8ef2;
+  color: #fff;
+  box-shadow: 2px 2px 2px #fff;
+}
+/*changed button styling when hovered on clear-night*/
+.clear-night-buttons:hover {
   background-color: #fff;
+  color: #bb8ef2;
+}
+/*change future styling on clear-night*/
+.clear-night-future {
+  background-color: #000;
+  color: #fff;
+}
+/*change future close button styling on clear-night*/
+.clear-night-close {
+  background-color: #fff;
+  color: #bb8ef2;
+}
+/*change home styling on clear-night*/
+.clear-night-home {
+  color: #bb8ef2;
+}
+/*change home styling when hover on clear-night*/
+.clear-night-home:hover {
+  color: #fff;
+}
+/*change h1 styling on partly cloudy night*/
+.cloudy-night-h1 {
+  color: #8F724A;
+}
+/*change button styling on cloudy night*/
+.cloudy-night-buttons {
+  background-color: #8F724A;
+  color: #000;
+}
+/*change button styling when hover on cloudy night*/
+.cloudy-night-buttons:hover {
+  background-color: #634e31;
+  color: #000;
+}
+/*change close button styling on cloudy night*/
+.cloudy-night-close {
+  background-color: #634e31 !important;
+  color: #fff !important;
+}
+/*change home button styling on cloudy night*/
+.cloudy-night-home {
+  color: #634e31;
+}
+/*change home button when hover on cloudy night*/
+.cloudy-night-home:hover {
+  color: #fff;
+}
+/*change forecast styling when rainy day*/
+.rain-forecast {
+  opacity: 0.8;
+}
+/*change button styling when rainy day*/
+.rain-buttons {
+  background-color: #042d10;
+  color: #fff;
+  box-shadow: 2px 2px 2px #1a1a1d;
+}
+/*change button styling when hover on rainy day*/
+.rain-buttons:hover {
+  background-color: #026616;
+  color: #fff;
+}
+/*change close button styling on rainy day*/
+.rain-buttons-close {
+  background-color: #042d10 !important;
+  color: #fff !important;
+}
+/*change future forecast styling on rainy day*/
+.rain-future {
+  background-color: #000;
+  color: #fff;
+  opacity: 0.6;
+}
+/*change home button styling on rainy day*/
+.rain-home {
+  color: #042d10;
+}
+/*change home button when hover on rainy day*/
+.rain-home:hover {
+  color: #026616;
+}
+/*change buttons styling when snow*/
+.snow-buttons {
+  background-color: #fff;
+  color: #000;
+  box-shadow: 2px 2px 2px #000;
+}
+/*change buttons styling when hover on snowy day*/
+.snow-buttons:hover {
+  background-color: #000;
+  color: #fff;
+}
+/*change forecast styling when snowy*/
+.snow-forecast {
+  background-color: #000;
+  opacity: 0.8;
+}
+/*change future forecast styling when snowy*/
+.snow-future {
+  background-color: #000;
+  color: #fff;
+  opacity: 0.9;
+}
+/*change future close button when snowy*/
+.snow-close {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+/*change  home button styling when snowy*/
+.snow-home {
+  color: #000;
+}
+/*change home button styling when hover when snowy*/
+.snow-home:hover {
+  color: grey;
+}
+/*change button styling when sleet*/
+.sleet-buttons {
+  background-color: #027018;
+  color: #fff;
+  box-shadow: 2px 2px 2px #fff;
+}
+/*change sleet buttons styling when hover w/ sleet*/
+.sleet-buttons:hover {
+  background-color: #003a0c;
+  color: #fff;
+}
+/*change forecast styling when sleet*/
+.sleet-forecast {
+  background-color: #000;
+  opacity: 0.8;
+}
+/*change future forecast styling when sleet*/
+.sleet-future {
+  background-color: #000;
+  color: #fff;
+  opacity: 0.8;
+}
+/*change future close button styling when sleet*/
+.sleet-close {
+  background-color: #027018;
+  color: #fff;
+}
+/*change home button styling when sleet*/
+.sleet-home {
+  color: #027018;
+}
+/*change home button when hover when sleet*/
+.sleet-home:hover {
+  color: #003a0c;
+}
+/*change button styling on windy day*/
+.windy-buttons {
+  background-color: #4F6563;
+  color: #AD9A8F;
+  box-shadow: 2px 2px 2px #fff;
+}
+/*change button styling when hover on windy day*/
+.windy-buttons:hover {
+  background-color: #93bcb9;
+  color: #AD9A8F;
+}
+/*change forecast styling on windy day*/
+.windy-forecast {
+  background-color: #4F6563;
+  opacity: 0.8;
+}
+/*future forecast styling when windy*/
+.windy-future {
+  background-color: #4F6563;
+  opacity: 0.9;
+}
+/*close button styling when windy*/
+.windy-close {
+  background-color: #4F6563;
+  color: #AD9A8F;
+}
+/*home button styling when windy*/
+.windy-home {
+  color: #93bcb9;
+}
+/*home button hover styling when windy*/
+.windy-home:hover {
+  color: #4F6563;
+}
+/*buttons styling when foggy*/
+.fog-buttons {
+  background-color: #fff;
+  opacity: 0.3;
+  color: #000;
+}
+/*button styling when hover when foggy*/
+.fog-buttons:hover {
+  background-color: #000;
+  opacity: 0.3;
+  color: #fff;
+}
+/*forecast styling when fog*/
+.fog-forecast {
+  background-color: #000;
+  opacity: 0.8;
+  color: #fff;
+}
+/*future forecast styling when fog*/
+.fog-future {
+  background-color: #000;
+  color: #fff;
+  opacity: 0.7;
+}
+/*close button styling when fog*/
+.fog-close {
+  background-color: #e8d892;
+  color: #000;
+}
+/*home button styling when fog*/
+.fog-home {
+  color: #e8d892;
+}
+/*home button hover styling when fog*/
+.fog-home:hover {
+  color: #fff;
+}
+/*button styling cloudy day*/
+.cloudy-day-buttons {
+  background-color: #fff;
+  color: #00d0ff;
+}
+/*button hover styling cloudy day*/
+.cloudy-day-buttons:hover {
+  background-color: #fff;
+  color: #00d0ff;
+  opacity: 0.6;
+}
+/*forecast styling cloudy day*/
+.cloudy-day-forecast {
+  background-color: #000;
+  opacity: 0.6;
+}
+/*future forecast styling cloudy day*/
+.cloudy-day-future {
+  background-color: #000;
+  color: #fff;
+  opacity: 0.8;
+}
+/*close button styling cloudy day*/
+.cloudy-day-close {
+  background-color: #00d0ff;
+  color: #fff;
+}
+/*home button styling cloudy day*/
+.cloudy-day-home {
+  color: #fff;
+}
+/*home button hover styling cloudy day*/
+.cloudy-day-home:hover {
+  color: #00d0ff;
 }
